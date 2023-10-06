@@ -548,7 +548,7 @@ function buttons() {
 
     
 
-    if (player_split_points[0] != player_split_points[1]){
+    if (player_split_points[0] == player_split_points[1]){
         split_cards_button.onclick = function(e){
         split_cards();
         points_interface()
