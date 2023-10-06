@@ -1,2 +1,2 @@
 # BlackJack_Project
-Jogo de BlackJackr feito em HTML, CSS e JS
+Jogo de BlackJack feito em HTML, CSS e JS
