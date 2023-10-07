@@ -479,6 +479,38 @@ function result(show_result){
             end_game.innerHTML = `<h2>FIM DE JOGO! <br> JOGADOR VENCEU NA MÃO DIREITA<br>E PERDEU NA ESQUERDA</h2>
             <button id="play-again"><h2>Jogar Novamente</h2></button>`
         }
+        else if (player_split_points[0] > 21 && crupie_points <= 21 && player_split_points[1] > 21 ){
+            end_game.innerHTML = `<h2>FIM DE JOGO! <br> JOGADOR PERDEU NAS DUAS MÃOS</h2>
+            <button id="play-again"><h2>Jogar Novamente</h2></button>`
+        }
+        else if (player_split_points[0] <= 21 && crupie_points <= 21 && player_split_points[1] > 21 ){
+            if (player_split_points[0] > crupie_points){
+                end_game.innerHTML = `<h2>FIM DE JOGO! <br> JOGADOR VENCEU NA MÃO ESQUERDA<br>E PERDEU NA DIREITA</h2>
+                <button id="play-again"><h2>Jogar Novamente</h2></button>`
+            }
+            else if (player_split_points[0] < crupie_points){
+                end_game.innerHTML = `<h2>FIM DE JOGO! <br> JOGADOR PERDEU NAS DUAS MÃOS</h2>
+                <button id="play-again"><h2>Jogar Novamente</h2></button>`
+            }
+            else if (player_split_points[0] == crupie_points){
+                end_game.innerHTML = `<h2>FIM DE JOGO! <br> JOGADOR EMPATOU NA MÃO ESQUERDA<br>E PERDEU NA DIREITA</h2>
+                <button id="play-again"><h2>Jogar Novamente</h2></button>`
+            }
+        }
+        else if (player_split_points[0] > 21 && player_split_points[1] <= 21 && crupie_points <= 21){
+            if (player_split_points[1] < crupie_points){
+                end_game.innerHTML = `<h2>FIM DE JOGO! <br> JOGADOR PERDEU NAS DUAS MÃOS</h2>
+                <button id="play-again"><h2>Jogar Novamente</h2></button>`
+            }
+            else if (player_split_points[1] > crupie_points){
+                end_game.innerHTML = `<h2>FIM DE JOGO! <br> JOGADOR PERDEU NA MÃO ESQUERDA<br>E VENCEU NA DIREITA</h2>
+                <button id="play-again"><h2>Jogar Novamente</h2></button>`
+            }
+            else if (player_split_points[1] == crupie_points){
+                end_game.innerHTML = `<h2>FIM DE JOGO! <br> JOGADOR PERDEU NA MÃO ESQUERDA<br>E EMPATOU NA DIREITA</h2>
+                <button id="play-again"><h2>Jogar Novamente</h2></button>`
+            }
+        }
     }
     const play_gain = document.getElementById('play-again');
             play_gain.onclick = function(e){
